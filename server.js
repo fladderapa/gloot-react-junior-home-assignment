@@ -1,8 +1,8 @@
 /** A simple REST server built with express */
 
-const shortid = require('shortid');
-const express = require('express');
-const bodyParser = require('body-parser');
+const shortid = require("shortid");
+const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 
 const PORT = 3000;
@@ -12,13 +12,13 @@ app.use(bodyParser.json());
 app.use(allowCorsMiddleware);
 
 /* API */
-app.get('/game', getGames);
-app.get('/game/:id', getGame);
-app.put('/game/:id', editGame);
-app.post('/game', addGame);
-app.delete('/game/:id', deleteGame);
+app.get("/game", getGames);
+app.get("/game/:id", getGame);
+app.put("/game/:id", editGame);
+app.post("/game", addGame);
+app.delete("/game/:id", deleteGame);
 /* Health endpoint */
-app.get('/health', getHealth);
+app.get("/health", getHealth);
 
 /* Start server */
 app.listen(3000, () =>
@@ -29,10 +29,10 @@ app.listen(3000, () =>
 
 /* The mock 'database' */
 let games = [
-  { id: '23TplPdS', name: 'Dwarf Fortress' },
-  { id: '46Juzcyx', name: 'The Sims 2' },
-  { id: '2WEKaVNO', name: 'Elasto Mania' },
-  { id: 'nYrnfYEv', name: 'Team Fortress 2' },
+  { id: "23TplPdS", name: "Dwarf Fortress" },
+  { id: "46Juzcyx", name: "The Sims 2" },
+  { id: "2WEKaVNO", name: "Elasto Mania" },
+  { id: "nYrnfYEv", name: "Team Fortress 2" }
 ];
 
 /* IMPLEMENTATION DETAILS */
@@ -115,8 +115,11 @@ function getHealth(req, res) {
 
 /* Add CORS-headers to every request */
 function allowCorsMiddleware(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
   next();
 }

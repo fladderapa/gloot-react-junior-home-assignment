@@ -1,5 +1,36 @@
+body {
+  background-color: #f9f9f9;
+  font-family: "Rajdhani", sans-serif;
+  color: #424242;
+}
+
+i:hover {
+  cursor: pointer;
+  color: #686868;
+}
 #app-container {
-  max-width: 800px;
   margin: auto;
-  padding: 4rem;
+  background-color: #f9f9f9;
+  padding: 64px 0 64px 0;
+}
+
+.hero-img {
+  height: 250px;
+  width: 96%;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.container {
+  background-color: #f9f9f9;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 870px;
+  justify-content: center;
+}
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
 }
